@@ -1,65 +1,58 @@
-import Image from "next/image";
+﻿"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import TrustBar from "@/components/TrustBar";
+import BentoFeatures from "@/components/BentoFeatures";
+import StickyCTA from "@/components/StickyCTA";
+import BackgroundVideo from "@/components/BackgroundVideo";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <BackgroundVideo />
+      <section className="section pt-24 md:pt-32 text-center">
+        <motion.h1 initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{duration:1}}
+          className="hero-h bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+          Premium websites that feel alive.
+        </motion.h1>
+        <motion.p initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:.1,duration:.8}}
+          className="subtle mt-5 text-lg max-w-2xl mx-auto">
+          Launch today: <b>$465</b> one-time setup + <b>$99/mo</b> care (hosting, updates, monitoring, fixes).
+        </motion.p>
+        <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{delay:.2,duration:.7}} className="mt-8 flex items-center justify-center gap-3">
+          <Link href="/pricing" className="btn-primary">Get Started</Link>
+          <Link href="/reviews" className="btn-ghost">See Reviews</Link>
+        </motion.div>
+      </section>
+
+      <TrustBar />
+      <BentoFeatures />
+
+      <section className="section card p-8">
+        <h2 className="text-2xl font-semibold">What clients say</h2>
+        <div className="mt-6 grid md:grid-cols-3 gap-6">
+          {[
+            { name: "Jordan", text: "Fast, gorgeous, and converts. 10/10." },
+            { name: "Avery", text: "Animations feel top-tier. Setup was painless." },
+            { name: "Casey", text: "Went live same day — insane value." },
+          ].map((r) => (
+            <div key={r.name} className="card p-6">
+              <p className="text-white/90">“{r.text}”</p>
+              <p className="subtle mt-3 text-sm">— {r.name}</p>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="section text-center">
+        <h3 className="text-2xl font-semibold">Ready to launch?</h3>
+        <p className="subtle mt-2">One plan. Elite results. $465 setup + $99/mo.</p>
+        <div className="mt-6">
+          <Link href="/pricing" className="btn-primary">Buy & Subscribe</Link>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <StickyCTA />
+    </main>
   );
 }
