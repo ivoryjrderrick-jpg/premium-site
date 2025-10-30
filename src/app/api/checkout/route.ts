@@ -5,14 +5,14 @@ export async function POST() {
   try {
     const siteUrl = process.env.SITE_URL || "http://localhost:3000";
     const monthly = process.env.STRIPE_MONTHLY_PRICE_ID; // $99/mo
-    const setup   = process.env.STRIPE_SETUP_PRICE_ID;   // $465 one-time
+    const setup   = process.env.STRIPE_SETUP_PRICE_ID;   // $1,000 one-time
     if (!monthly || !setup) throw new Error("Missing STRIPE price env vars");
 
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
       payment_method_types: ["card"],
       line_items: [
-        { price: setup,   quantity: 1 }, // $465 today
+        { price: setup,   quantity: 1 }, // $1,000 today
         { price: monthly, quantity: 1 }, // $99/mo subscription
       ],
       billing_address_collection: "auto",

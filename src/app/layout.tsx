@@ -6,10 +6,10 @@ import LenisProvider from "@/components/LenisProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.SITE_URL ?? "http://localhost:3000"),
-  title: "YOUR BUSINESS NAME",
-  description: "Premium websites with world-class motion. $465 one-time + $99/mo.",
-  openGraph: { title: "YOUR BUSINESS NAME", description: "Premium websites with world-class motion." },
-  twitter: { card: "summary_large_image", title: "YOUR BUSINESS NAME" }
+  title: "SWI — Scale with Ivory",
+  description: "Premium websites with world-class motion. $1,000 one-time + $99/mo.",
+  openGraph: { title: "SWI — Scale with Ivory", description: "We transform your website into a revenue-generating asset." },
+  twitter: { card: "summary_large_image", title: "SWI — Scale with Ivory" }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

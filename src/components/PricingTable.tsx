@@ -17,28 +17,55 @@ export default function PricingTable() {
   }
 
   return (
-    <section className="mx-auto max-w-3xl">
-      <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-8">
-        <h2 className="text-2xl font-semibold">Website Build + Care</h2>
-        <p className="text-white/70 mt-2">
-          One-time setup <b>$465</b> + <b>$99/mo</b> (hosting, updates, monitoring, priority fixes).
-        </p>
-        <div className="mt-6 flex items-baseline gap-3">
-          <span className="text-3xl font-bold">$465</span><span className="text-white/60">one-time</span>
-          <span className="text-white/40">·</span>
-          <span className="text-xl font-semibold">$99</span><span className="text-white/60">/mo</span>
+    <section id="pricing" className="section">
+      <h2 className="text-3xl font-bold tracking-tight">Transparent Pricing, Exceptional Value</h2>
+      <p className="subtle mt-2">No hidden fees. One straightforward package designed for growth.</p>
+
+      <div className="mt-8 grid md:grid-cols-2 gap-6">
+        <div className="card p-8">
+          <h3 className="text-xl font-semibold">$1,000 <span className="text-white/60 text-sm">one-time</span></h3>
+          <p className="text-white/70 mt-2">Professional Website Design</p>
+          <ul className="mt-4 text-white/80 space-y-2">
+            <li>• Elite motion design & hero animation ready</li>
+            <li>• On-brand UI kit & typography</li>
+            <li>• SEO meta, OG image, analytics</li>
+            <li>• Stripe checkout integrated</li>
+          </ul>
+          <button onClick={handleBuy} disabled={loading}
+                  className="mt-8 w-full rounded-md bg-cyan-400 text-gray-900 px-6 py-3 font-semibold hover:bg-cyan-300 transition">
+            {loading ? "Redirecting…" : "Get Started — $1,000 + $99/mo"}
+          </button>
+          <p className="mt-3 text-xs text-white/60">Checkout shows $1,000 today + starts $99/mo subscription.</p>
         </div>
-        <ul className="mt-6 text-white/80 space-y-2">
-          <li>• Cinematic hero & micro-interactions</li>
-          <li>• Stripe checkout & analytics</li>
-          <li>• Domain, SSL, SEO meta & OG image</li>
-          <li>• Contact form + email handoff</li>
-        </ul>
-        <button onClick={handleBuy} disabled={loading}
-                className="mt-8 w-full rounded-md bg-cyan-400 text-gray-900 px-6 py-3 font-semibold hover:bg-cyan-300 transition">
-          {loading ? "Redirecting…" : "Buy & Subscribe"}
-        </button>
-        <p className="mt-3 text-xs text-white/60">Checkout shows $465 today + starts $99/mo subscription.</p>
+
+        <div className="card p-8">
+          <h3 className="text-xl font-semibold">$99 <span className="text-white/60 text-sm">/month</span></h3>
+          <p className="text-white/70 mt-2">Ongoing Maintenance & Support</p>
+          <ul className="mt-4 text-white/80 space-y-2">
+            <li>• Hosting, monitoring, and backups</li>
+            <li>• Content updates and small tweaks</li>
+            <li>• Performance & uptime checks</li>
+            <li>• Priority support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="card p-6 mt-8">
+        <h4 className="font-semibold mb-2">Your investment pays for itself</h4>
+        <div className="grid md:grid-cols-3 gap-4 text-sm text-white/80">
+          <div className="rounded-xl border border-white/10 p-4 bg-white/5">
+            <div className="text-2xl font-bold">2</div>
+            <div>Customers per month to pay for care plan</div>
+          </div>
+          <div className="rounded-xl border border-white/10 p-4 bg-white/5">
+            <div className="text-2xl font-bold">10–20×</div>
+            <div>Potential ROI from better conversion</div>
+          </div>
+          <div className="rounded-xl border border-white/10 p-4 bg-white/5">
+            <div className="text-2xl font-bold">520%</div>
+            <div>Avg. increase in perceived credibility</div>
+          </div>
+        </div>
       </div>
     </section>
   );
