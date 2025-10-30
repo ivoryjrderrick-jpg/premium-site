@@ -1,25 +1,37 @@
-﻿@tailwind base;
-@tailwind components;
-@tailwind utilities;
+﻿@import "tailwindcss";
 
-/* Dark, modern base */
-:root { color-scheme: dark; }
-html, body { height: 100%; }
+@layer components {
+  .card {
+    @apply rounded-xl border border-white/10 bg-white/5 backdrop-blur-md;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-cyan-400 px-5 py-3 font-semibold text-gray-900 hover:bg-cyan-300 transition;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-md border border-white/15 px-5 py-3 hover:bg-white/5 transition;
+  }
+  .section {
+    @apply mx-auto max-w-6xl px-4 py-16;
+  }
+  .hero-h {
+    @apply text-5xl md:text-6xl font-extrabold tracking-tight;
+  }
+  .subtle {
+    @apply text-white/70;
+  }
+}
 
-body {
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  height: 100%;
   background:
     radial-gradient(1200px 800px at 70% -200px, rgba(0, 229, 255, 0.12) 0%, transparent 40%),
     linear-gradient(180deg, #0A0A0B 0%, #111113 100%);
-  color: #ffffff;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: #fff;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* Helpful utilities used in components */
-.card { @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md; }
-.btn-primary { @apply inline-flex items-center justify-center rounded-md bg-cyan-400 px-5 py-3 font-semibold text-gray-900 hover:bg-cyan-300 transition; }
-.btn-ghost { @apply inline-flex items-center justify-center rounded-md border border-white/15 px-5 py-3 hover:bg-white/5 transition; }
-.section { @apply mx-auto max-w-6xl px-4 py-16; }
-.hero-h { @apply text-5xl md:text-6xl font-extrabold tracking-tight; }
-.subtle { @apply text-white/70; }
