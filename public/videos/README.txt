@@ -1,4 +1,3 @@
 ﻿# Put your assets here:
-# /public/videos/landing.mp4
-# /public/videos/landing.webm
-# /public/videos/poster.jpg
+# /public/videos/hero-bg.mp4
+# (Optional) poster.jpg if you want to swap image on mobile/low data

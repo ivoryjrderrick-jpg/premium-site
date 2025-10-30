@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en"><head><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" /></head>
-      <body className="antialiased">
+    <html lang="en">
+      <body className="antialiased bg-gray-950 text-white">
         <LenisProvider>
           <Header />
-          {children}
+          <main className="mx-auto max-w-6xl px-4 py-12">{children}</main>
           <Footer />
         </LenisProvider>
       </body>

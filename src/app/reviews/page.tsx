@@ -6,17 +6,16 @@ const REVIEWS = [
 ];
 export default function Reviews() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-24">
+    <div className="section">
       <h1 className="text-4xl font-bold">Reviews</h1>
       <div className="mt-8 grid md:grid-cols-3 gap-6">
         {REVIEWS.map(r => (
-          <div key={r.name} className="rounded-2xl border p-6 bg-white/60">
-            <p className="text-yellow-500">{"★★★★★".slice(0, r.rating)}</p>
-            <p className="text-gray-700 mt-3">“{r.text}”</p>
-            <p className="text-sm text-gray-500 mt-2">— {r.name}</p>
+          <div key={r.name} className="card p-6">
+            <p className="text-white/90">“{r.text}”</p>
+            <p className="subtle mt-3 text-sm">— {r.name}</p>
           </div>
         ))}
       </div>
-    </main>
+    </div>
   );
 }

@@ -5,17 +5,17 @@ const POSTS = [
 ];
 export default function Blog() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-24">
+    <div className="section">
       <h1 className="text-4xl font-bold">Blog</h1>
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {POSTS.map(p => (
-          <a key={p.slug} href={`/blog/${p.slug}`} className="rounded-2xl border p-6 hover:bg-white/50">
-            <p className="text-xs text-gray-500">{p.date}</p>
+          <a key={p.slug} href={`/blog/${p.slug}`} className="card p-6 hover:bg-white/10 transition">
+            <p className="text-xs text-white/60">{p.date}</p>
             <h3 className="mt-2 text-xl font-semibold">{p.title}</h3>
-            <p className="text-gray-600 mt-2">{p.excerpt}</p>
+            <p className="text-white/70 mt-2">{p.excerpt}</p>
           </a>
         ))}
       </div>
-    </main>
+    </div>
   );
 }
